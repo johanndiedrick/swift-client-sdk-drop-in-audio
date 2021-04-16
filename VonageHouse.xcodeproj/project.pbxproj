@@ -16,6 +16,7 @@
 		12F71D6125CC4B520082B543 /* RemoteLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F71D6025CC4B520082B543 /* RemoteLoader.swift */; };
 		12F71D6425CC4DAC0082B543 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F71D6325CC4DAC0082B543 /* ContentView.swift */; };
 		46ACC54CB844DF2F6CB8B9FB /* Pods_VonageHouse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B04769C11B15A7D8B3B068A6 /* Pods_VonageHouse.framework */; };
+		C86FD3712628BFBA00BD5E56 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86FD3702628BFBA00BD5E56 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		12F71D6025CC4B520082B543 /* RemoteLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteLoader.swift; sourceTree = "<group>"; };
 		12F71D6325CC4DAC0082B543 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B04769C11B15A7D8B3B068A6 /* Pods_VonageHouse.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VonageHouse.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C86FD3702628BFBA00BD5E56 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		DFB2200A1BBE2F43E65B6C22 /* Pods-VonageHouse.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VonageHouse.debug.xcconfig"; path = "Target Support Files/Pods-VonageHouse/Pods-VonageHouse.debug.xcconfig"; sourceTree = "<group>"; };
 		EDFA2BA05A3D092B184DA386 /* Pods-VonageHouse.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VonageHouse.release.xcconfig"; path = "Target Support Files/Pods-VonageHouse/Pods-VonageHouse.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -68,6 +70,7 @@
 			isa = PBXGroup;
 			children = (
 				12B30F9B25CAEA7500289801 /* VonageHouseApp.swift */,
+				C86FD3702628BFBA00BD5E56 /* Constants.swift */,
 				12B30F9D25CAEA7500289801 /* RoomListView.swift */,
 				12F71D6025CC4B520082B543 /* RemoteLoader.swift */,
 				12F71D5D25CC49F60082B543 /* RoomView.swift */,
@@ -222,6 +225,7 @@
 				12F71D5E25CC49F60082B543 /* RoomView.swift in Sources */,
 				12F71D6425CC4DAC0082B543 /* ContentView.swift in Sources */,
 				12B30F9E25CAEA7500289801 /* RoomListView.swift in Sources */,
+				C86FD3712628BFBA00BD5E56 /* Constants.swift in Sources */,
 				12B30F9C25CAEA7500289801 /* VonageHouseApp.swift in Sources */,
 				12F71D6125CC4B520082B543 /* RemoteLoader.swift in Sources */,
 			);
@@ -363,7 +367,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.vonage.VonageHouse;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.vonage.VonageHouse-sg-demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -388,7 +392,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.vonage.VonageHouse;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.vonage.VonageHouse-sg-demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
