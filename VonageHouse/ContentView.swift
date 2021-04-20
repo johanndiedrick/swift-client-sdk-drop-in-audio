@@ -43,7 +43,8 @@ final class AuthModel: NSObject, ObservableObject, NXMClientDelegate {
         requestPermissionsIfNeeded()
         
         do {
-            try audioSession.setCategory(AVAudioSession.Category.playAndRecord)
+            try audioSession.setCategory(AVAudioSession.Category.playAndRecord, options: .defaultToSpeaker)
+            print("seting category to default to speaker")
         } catch let error as NSError {
             print("setCategory error: \(error.localizedDescription)" )
         }
@@ -54,6 +55,8 @@ final class AuthModel: NSObject, ObservableObject, NXMClientDelegate {
         } catch let error as NSError {
             print("audioSession error: \(error.localizedDescription)")
         }
+        
+      
     }
     
     func requestPermissionsIfNeeded() {
