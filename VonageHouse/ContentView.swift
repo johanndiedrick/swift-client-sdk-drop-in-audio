@@ -37,14 +37,31 @@ final class AuthModel: NSObject, ObservableObject, NXMClientDelegate {
     
     private let audioSession = AVAudioSession.sharedInstance()
     
+    
+        
     func setup() {
         requestPermissionsIfNeeded()
+        
+        do {
+            try audioSession.setCategory(AVAudioSession.Category.playAndRecord)
+        } catch let error as NSError {
+            print("setCategory error: \(error.localizedDescription)" )
+        }
+
+        do {
+            try audioSession.overrideOutputAudioPort(AVAudioSession.PortOverride.speaker)
+            print("overriding to speaker")
+        } catch let error as NSError {
+            print("audioSession error: \(error.localizedDescription)")
+        }
     }
     
     func requestPermissionsIfNeeded() {
         if audioSession.recordPermission != .granted {
             audioSession.requestRecordPermission { (isGranted) in
                 print("Microphone permissions \(isGranted)")
+                
+                
             }
         }
     }
