@@ -1,6 +1,6 @@
 import SwiftUI
 import NexmoClient
-
+import AVFoundation
 struct MemberView: View {
     var memberName: String
     
@@ -49,6 +49,7 @@ struct RoomView: View {
         }.navigationTitle(convName)
         .navigationBarBackButtonHidden(true)
         .onAppear(perform: {
+            print(AVAudioSession.sharedInstance().currentRoute)
             conversationModel.loadConversation(convID: convID)
         })
     }
@@ -77,9 +78,19 @@ final class ConversationModel: NSObject, ObservableObject, NXMConversationDelega
                     }
                 }
                 
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                    self.conversation?.enableMedia()
-                }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                                    self.conversation?.enableMedia()
+                         }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                                    let session = AVAudioSession.sharedInstance()
+                    do {
+                                        try session.setCategory(.playAndRecord, options: [AVAudioSession.CategoryOptions.defaultToSpeaker])
+                                        try session.overrideOutputAudioPort(.speaker)
+                                        print("enabling speaker")
+                                    } catch let error {
+                                        print(error)
+                                    }
+                      }
             }
         }
     }
